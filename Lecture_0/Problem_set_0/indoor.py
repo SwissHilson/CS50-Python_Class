@@ -1,4 +1,4 @@
-#A program that displays user input in lower case letter
+# A program that displays user input in lower case letter
 
 # The main function
 def main():
@@ -7,7 +7,6 @@ def main():
 
 # lowercase conversion function
 def user_input(user):
-    while True:
-        return user.strip().lower()
+    return user.strip().lower()
 
 main()
