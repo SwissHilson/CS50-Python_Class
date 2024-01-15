@@ -1,4 +1,4 @@
-# Asimple function that print Hello to the user's name 
+# A simple function that print Hello to the user's name 
 
 def main():
     name = input("What's your name? ").strip().title()
