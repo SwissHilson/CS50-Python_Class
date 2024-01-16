@@ -1,4 +1,4 @@
-
+#A program that shows student grade using their score
 
 score = int(input("Score: "))
 
