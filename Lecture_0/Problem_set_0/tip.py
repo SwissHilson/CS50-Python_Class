@@ -1,3 +1,4 @@
+# A program that calculate the percentage of tips
 
 def dollars_to_float(d):
     return float(d[1:])
