@@ -1,4 +1,4 @@
-
+# A program that return a string as an output
 
 def main():
     question = input("What is the Answer to the Great Question of Life, the Universe, and Everything? ")
