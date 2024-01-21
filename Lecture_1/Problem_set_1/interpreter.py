@@ -1,5 +1,5 @@
 '''
-A program that enables user to arithmetic maths
+A program that enables user to perform an arithmetic maths
 '''
 print("Note: Always add a space in-between your input!!!")
 
