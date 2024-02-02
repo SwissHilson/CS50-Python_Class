@@ -1,11 +1,11 @@
 def main():
     prompt = "Item: "
-    user = place_orders(prompt)
-    print(user)
+    menu = create_menu()
+    user_total = place_orders(menu, prompt)
+    print(user_total)
 
-
-def place_orders(prompt):
-    menu = {
+def create_menu():
+    return {
         "Baja Taco": 4.25,
         "Burrito": 7.50,
         "Bowl": 8.50,
@@ -17,6 +17,7 @@ def place_orders(prompt):
         "Tortilla Salad": 8.00
     }
 
+def place_orders(menu, prompt):
     order_total = 0.0
 
     while True:
@@ -33,6 +34,7 @@ def place_orders(prompt):
         except EOFError:
             # Ctrl-D pressed, exit the loop
             break
+
     return order_total
 
 if __name__ == "__main__":
