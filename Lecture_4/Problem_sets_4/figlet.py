@@ -1,26 +1,27 @@
 import sys
 import random
 import pyfiglet
-
 def main():
 
-    user_input = input("Input: ")
-    output = text_in_font(user_input, font_name)
-    print(f"Output: \n{output}")
+    #Check the number of command-line arguments
+    if len(sys.argv) not in [1, 3]:
+        sys.exit("Usage: python figlet.py [-f FONT_NAME]")
 
-
-    if len(sys.argv) not in [2, 3]:
-        sys.exit("Usage: python figlet.py [-f FONT_NAME] [TEXT]")
-
-    if len(sys.argv) == 1 or (len(sys.argv) == 2 and sys.argv[1] not in ['-f', '--font']):
+    # Check if the user wants to output text in random font
+    elif len(sys.argv) == 1:
         font_name = random.choice(pyfiglet.FigletFont.getFonts())
-    elif len(sys.argv) == 3 and sys.argv[1] in ['-f', '--font']:
-        font_name = sys.argv[2]
     else:
-        sys.exit("Invalid argument. Usage: python figlet.py [-f FONT_NAME] [TEXT]")
+        # Check if the user provided correct argument for specifying font
+        if  sys.argv[1] not in ['-f', '--font'] or len(sys.argv) != 3:
+            sys.exit("Invalid argument. Usage: python figlet.py [-f FONT_NAME]")
+        font_name = sys.argv[2]
 
     if font_name not in pyfiglet.FigletFont.getFonts():
         sys.exit(f"Font '{font_name}' not found.")
+
+    user_input = input("Input: ")
+    output = text_in_font(user_input, font_name)
+    print(f"Output: \n {output}")
 
 def text_in_font(text, font_name):
     figlet = pyfiglet.Figlet(font=font_name)
